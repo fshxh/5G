@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/css/page3.css">
+    <script src=" https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div class="header">
+            <img class="top-logo2" src="./public/images/1.png">
+            <img class="top-logo1" src="./public/images/2.png">
+            <ul class="items">
+                <li v-for="(item, index2) in top " v-on:click="change2(index2, item.href) "><a :class="{active: index2===currentIndex2} ">{{item.name}}</a> </li>
+            </ul>
+        </div>
+</body>
+<script>
+    var title2 = new Vue({
+        el: '#root',
+        data: {
+            top: [{
+                name: '首页',
+                href: 'index.html'
+            }, {
+                name: '5G',
+                href: 'page1.html'
+
+            }, {
+                name: '文创视域',
+                href: 'page2.html'
+
+            }, {
+                name: '技术特性',
+                href: 'page3.html'
+
+            }, {
+                name: '智能城市',
+                href: 'page4.html'
+
+            }, {
+                name: '智能手机',
+                href: 'page5.html'
+            }, ],
+            currentIndex2: 3,
+
+        },
+        methods: {
+
+            change2(index2, href) {
+                this.currentIndex2 = index2
+                console.log(href)
+                location.href = href
+            }
+        }
+    })
+</script>
+
+</html>

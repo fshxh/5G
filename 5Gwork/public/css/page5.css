@@ -1,0 +1,62 @@
+html,
+body {
+    margin: 0;
+    position: relative;
+    height: 100%;
+}
+
+.root {
+    position: relative;
+}
+
+.top-logo1 {
+    width: 80px;
+    height: 60px;
+    margin: 30px 10px;
+}
+
+.top-logo2 {
+    width: 40px;
+    height: 40px;
+    margin: 40px 30px;
+    animation: xz 1s linear infinite;
+}
+
+@keyframes xz {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.header {
+    color: #333333;
+    margin: -15px 100px;
+    display: inline-flex;
+}
+
+.header a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #333333;
+    font-size: 16px;
+    margin-left: 60px;
+    white-space: nowrap;
+}
+
+.header li a.active {
+    color: #118eea;
+    text-decoration: none;
+}
+
+.items {
+    list-style-type: none;
+    display: flex;
+    font-size: 18px;
+}
+
+.items li {
+    margin: 25px;
+}

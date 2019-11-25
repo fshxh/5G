@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="./public/css/index.css">
+    <link rel="stylesheet" href="./swiper-5.2.0/package/css/swiper.css">
+
+    <script src=" https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <body>
+        <div id="root">
+            <div class="header">
+                <img class="top-logo2" src="./public/images/1.png">
+                <img class="top-logo1" src="./public/images/2.png">
+                <ul class="items">
+                    <li v-for="(item, index2) in top " v-on:click="change2(index2, item.href) "><a :class="{active: index2===currentIndex2} ">{{item.name}}</a> </li>
+                </ul>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img class="swiper-img" src="public/images/4.jpg"></div>
+                    <div class="swiper-slide"><img class="swiper-img" src="public/images/timg (1).jpg"></div>
+                    <div class="swiper-slide"><img class="swiper-img" src="public/images/timg (2).jpg"></div>
+
+
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="searcher-border">
+                    <div class="searcher">
+                        <input placeholder="搜索更多5G内容 ">
+                        <button class="btc" onclick="location.href='noService.html'">搜索</button>
+
+                    </div>
+                </div>
+                <div class="background-pic">
+                    <p class="bg-header">基本概念</p>
+                    <p class="bg-text">5G移动网络与早期的2G、3G和4G移动网络一样，5G网络是数字蜂窝网络，在这种网络中，供应商覆盖的服务区域被划分为许多被称为蜂窝的小地理区域。表示声音和图像的模拟信号在手机中被数字化，由模数转换器转换并作为比特流传输。蜂窝中的所有5G无线设备通过无线电波与蜂窝中的本地天线阵和低功率自动收发器（发射机和接收机）进行通信。收发器从公共频率池分配频道，这些频道在地理上分离的蜂窝中可以重复使用。本地天线通过高带宽光纤或无线回程连接与电话网络和互联网连接。与现有的手机一样，当用户从一个蜂窝穿越到另一个蜂窝时，他们的移动设备将自动“切换”到新蜂窝中的天线
+                        。
+                    </p>
+                    <p class="bg-text"> 5G网络的主要优势在于，数据传输速率远远高于以前的蜂窝网络，最高可达10Gbit/s，比当前的有线互联网要快，比先前的4G LTE蜂窝网络快100倍。另一个优点是较低的网络延迟（更快的响应时间），低于1毫秒，而4G为30-70毫秒。由于数据传输更快，5G网络将不仅仅为手机提供服务，而且还将成为一般性的家庭和办公网络提供商，与有线网络提供商竞争。以前的蜂窝网络提供了适用于手机的低数据率互联网接入，但是一个手机发射塔不能经济地提供足够的带宽作为家用计算机的一般互联网供应商</p>
+                </div>
+                <div>
+                    <details>
+                        <summary>5G,是一个简单公式</summary>
+                        <img src="./public/images/formale.jpeg">
+                    </details>
+
+                    <img class="body-pic" src="./public/images/11.png">
+                </div>
+                <div class="footer">
+                    <p>20175647<br>黄梓庄</p>
+                </div>
+            </div>
+
+
+    </body>
+    <script src="swiper-5.2.0/package/js/swiper.min.js"></script>
+
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+                dynamicBullets: true,
+            },
+        });
+    </script>
+    </script>
+    <script>
+        window.onload = function() {
+            var mySwiper = new Swiper('.swiper-container', {
+
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                },
+                pagination: {
+                    1: '.swiper-pagination',
+                },
+
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            })
+
+
+        }
+    </script>
+    <script>
+        var title2 = new Vue({
+            el: '#root',
+            data: {
+                top: [{
+                    name: '首页',
+                    href: 'index.html'
+                }, {
+                    name: '5G',
+                    href: 'page1.html'
+
+                }, {
+                    name: '文创视域',
+                    href: 'page2.html'
+
+                }, {
+                    name: '技术特性',
+                    href: 'joinus1.html'
+
+                }, {
+                    name: '智能城市',
+                    href: 'page4.html'
+
+                }, {
+                    name: '智能手机',
+                    href: 'page5.html'
+                }, ],
+                currentIndex2: 0,
+
+            },
+            methods: {
+
+                change2(index2, href) {
+                    this.currentIndex2 = index2
+                    console.log(href)
+                    location.href = href
+                }
+            }
+        })
+    </script>
+
+</html>
